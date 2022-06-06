@@ -1,0 +1,75 @@
+
+/*CONTENEDOR PRINCIPAL*/
+
+
+
+/*TITULO PROPLD*/
+.tituloPropld{
+
+	text-align: center;
+	color:#000;
+	
+}
+/*PERSONA QUE REALIZA LA BUSQUEDA*/
+#infoBusq{
+	
+	text-align: center;
+	color:#000;
+	margin: 60px 0;
+	font-size: 16px;
+	padding: 7px;
+}
+
+/*INFORMACIÓN DE NUESTROS LISTADOS*/
+#infoFuentes{
+
+	text-align: justify;
+	color:#000;
+	margin: 10px 0;
+	font-size: 16px;
+	padding-left: 3px
+	font-weight:bold;
+}
+
+
+/*RESULTADO NO COINCIDENCIA*/
+#noCoincidencia{
+background-color:#81E377;
+	text-align: center;
+	color:#000;
+	margin: 30px 0;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 7px;
+}
+#coincidencia{
+background-color:#FD8D8B;
+	text-align: center;
+	color:#000;
+	margin: 70px 0;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 7px;
+}
+.tituloFuentes{
+	text-align: center;
+	margin:0;
+}
+
+
+#ubcubo{
+	position: absolute;
+	top:0;
+	right: 0;
+	height:100px;
+	width:140px;
+}
+#propld{
+	position: absolute;
+	top:0;
+	height:110px;
+	width:150px;
+}
+.tipoLista{
+	margin:20px 20px;
+}
