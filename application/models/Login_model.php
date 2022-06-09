@@ -20,9 +20,8 @@ class Login_model extends CI_Model{
       $pwd=md5(crypt($password, 'rl'));
 
       $search = "
-      SELECT al.id, al.name, al.lastname, al.email, al.roll, al.idEntidad, ep.empresa,ep.pais,ep.f_termino, ep.paquete
-      FROM access_listas AS al, entidades_prolistas ep
-      WHERE  ep.idEntidad=al.idEntidad AND email='" . $username ."' and pwd='" .$pwd."' and status='active' ";
+      SELECT * FROM access_listas WHERE email='" . $username ."' and pwd='" .$pwd."' and status='active' ";
+      echo $search;
       $query = $this->db->query($search);
       return $query->result_array();
 
