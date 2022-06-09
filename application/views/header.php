@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Sistema automatizado para dar cumplimiento a las obligaciones actuales de reporte de Prevención de Lavado de Dinero">
-	<meta name="keywords" content="Prevención de lavado de dinero, PLD, Sistema automatizado, SOFOM, Condusef, iprofi, PLD/FT, SITI, Operaciones Relevantes, Operaciones Inusuales, Operaciones Preocupantes, CNBV, PEP, LISTAS NEGRAS Y DE PERSONAS POLÍTICAMENTE EXPUESTAS, Sociedad Financiera de Objeto Múltiple, Auditoría">
+	<meta name="keywords" content="Prevención de lavado de dinero, PLD, Sistema automatizado, SOFOM, Condusef, iprofi, PLD/FT, SITI, Operaciones Relevantes, Operaciones Inusuales, Operaciones Preocupantes, CNBV, PEP, LISTAS NEGRAS Y DE PERSONAS POL�?TICAMENTE EXPUESTAS, Sociedad Financiera de Objeto Múltiple, Auditoría">
 	<meta name="author" content="UBCubo">
 	<link rel="shortcut icon" href="<?=base_url('assets/images/favicon.png')?>">
 
-	<title>Pro Listas</title>
+	<title>Si cuento</title>
 
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800" rel="stylesheet" type="text/css">
 	<link href="//fonts.googleapis.com/css?family=Raleway:300,200,100" rel="stylesheet" type="text/css">

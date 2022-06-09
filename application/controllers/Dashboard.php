@@ -25,6 +25,15 @@ class Dashboard extends CI_Controller {
         $this->load->view('graficas/dash',$data);
         $this->load->view('footer');
     }
+    
+    public function index(){
+        
+        
+        $this->load->view('header');
+        menu_arriba();
+        $this->load->view('dashboard/welcome');
+        $this->load->view('footer');
+    }
     public function view2(){
         //busqudas
         $totalRegistros=$this->dashboard_model->get_totalBusquedas();

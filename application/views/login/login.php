@@ -9,7 +9,7 @@
 		<div class="block-flat">
 			<div class="header">
 				<h3 class="text-center"> 
-					<img  src="<?= base_url('assets/img/logo.png')?>" width="120"  alt="logo" class="logo-img" align="center" >
+					<img  src="<?= base_url('assets/img/logo.jpeg')?>" width="120"  alt="logo" class="logo-img" align="center" >
 				</h3>
 
 			</div>
@@ -41,7 +41,7 @@
 			</div>
 			<br>
 		</div>
-		<div class="text-center out-links"><a href="http://www.ubcubo.com/" target="_blank">© <?= date("Y") ?> &nbsp; <img src="<?=base_url('assets/img/logo_ubcubo.png')?>" alt="logo-ubcubo"> UBCubo</a></div>
+		
 	</div>
 </div>
 </body>

@@ -1,24 +1,24 @@
 <div class="menu-space">
 	<div class="content">
 		<ul class="cl-vnavigation">
-					<li><a href="<?=base_url('busqueda/busqueda');?>"><i class="fas fa-search"></i><span>Búsqueda</span></a>
-					<li><a href="<?=base_url('historial/mostrar_historial2');?>"><i class="fas fa-file-alt"></i><span>Busquedas anteriores</span></a>
+                    <li><a href="#"><i class="fas fa-search"></i><span>opcion</span></a></li>
+					<li><a href="<?=base_url('historial/mostrar_historial2');?>"><i class="fas fa-file-alt"></i><span>opcion</span></a>
 					</li>
 					<?php $roll=$this->session->userdata('roll');
 								$entidad=$this->session->userdata('entidad');
 						if($roll=='1'){
 					?>
-						<li><a href="#"><i class="fas fa-cog"></i><span> Configuración</span></a>
+						<li><a href="#"><i class="fas fa-cog"></i><span> opcion</span></a>
 							<ul class="sub-menu">
-								<li class=""><a href="<?=base_url('listas/get_Persona');?>">Mis Personas bloqueadas</a></li>
-								<li class=""><a href="<?=base_url('listas/mostrar_listas');?>">Mis listas</a></li>
-								<li class=""><a href="<?=base_url('listas/contenido_listas');?>">Contenido de listas</a></li>
-								<li class=""><a href="<?=base_url('listas/contenido_oculto');?>">Contenido eliminado</a></li>
+								<li class=""><a href="<?=base_url('listas/get_Persona');?>">opcion</a></li>
+								<li class=""><a href="<?=base_url('listas/mostrar_listas');?>">opcion</a></li>
+								<li class=""><a href="<?=base_url('listas/contenido_listas');?>">opcion</a></li>
+								<li class=""><a href="<?=base_url('listas/contenido_oculto');?>">opcion</a></li>
 
 								<?php if($entidad==1500){
 								?>
-								<li class=""><a href="<?=base_url('usuarios/mostrar_usuarios');?>">Alta de usuarios</a></li>
-									<li class=""><a href="<?=base_url('fuentes/mostrar_fuentes');?>">Fuentes de información</a></li>
+								<li class=""><a href="<?=base_url('usuarios/mostrar_usuarios');?>">opcion</a></li>
+									<li class=""><a href="<?=base_url('fuentes/mostrar_fuentes');?>">opcion</a></li>
 								<?php
 							}else{}
 								?>
@@ -29,11 +29,11 @@
 					$entidad=$this->session->userdata('entidad');
 					 if($entidad=='1500'){
 					?>
-						<li><a href="<?=base_url('bitacora/contenido_bitacora');?>"><i class="fas fas fa-chart-line"></i><span> Bitacora</span></a>
+						<li><a href="<?=base_url('bitacora/contenido_bitacora');?>"><i class="fas fas fa-chart-line"></i><span> opcion</span></a>
 
 					</li>
 					<?php }else{}?>
-							<li><a href="<?=base_url('listas/paises');?>"><i class="fa fa-map-marker"></i><span> Paises</span></a>
+							<li><a href="<?=base_url('listas/paises');?>"><i class="fa fa-map-marker"></i><span> opcion</span></a>
 						
 						<li><a href="<?=base_url('login/cerrarlogin');?>"><i class="fas fa-sign-out-alt"></i><span> Salir</span></a>
 
