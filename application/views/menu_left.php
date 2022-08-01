@@ -1,8 +1,8 @@
 <div class="menu-space">
 	<div class="content">
 		<ul class="cl-vnavigation">
-                    <li><a href="#"><i class="fas fa-search"></i><span>opcion</span></a></li>
-					<li><a href="<?=base_url('historial/mostrar_historial2');?>"><i class="fas fa-file-alt"></i><span>opcion</span></a>
+                    <li><a href="<?=base_url('clientes/get_clientes');?>"><i class="fas fa-users"></i><span>Clientes</span></a></li>
+					<li><a href="<?=base_url('clientes/get_clientes');?>"><i class="fas fa-users"></i><span>opcion</span></a>
 					</li>
 					<?php $roll=$this->session->userdata('roll');
 								$entidad=$this->session->userdata('entidad');
@@ -10,7 +10,7 @@
 					?>
 						<li><a href="#"><i class="fas fa-cog"></i><span> opcion</span></a>
 							<ul class="sub-menu">
-								<li class=""><a href="<?=base_url('listas/get_Persona');?>">opcion</a></li>
+								<li class=""><a href="<?=base_url('clientes/get_clientes');?>">opcion</a></li>
 								<li class=""><a href="<?=base_url('listas/mostrar_listas');?>">opcion</a></li>
 								<li class=""><a href="<?=base_url('listas/contenido_listas');?>">opcion</a></li>
 								<li class=""><a href="<?=base_url('listas/contenido_oculto');?>">opcion</a></li>

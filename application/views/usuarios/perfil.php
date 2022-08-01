@@ -60,7 +60,7 @@
                               <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                   <button class="btn btn-default"><a href="<?=base_url('listas/busqueda');?>">Volver</a></button>
-                                  <button id= type="submit"  class="btn btn-primary wizard-next" >Guardar</button>
+                                  <button  type="submit"  class="btn btn-primary wizard-next" >Guardar</button>
                                 </div>
                               </div>
                             </form>
