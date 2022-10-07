@@ -46,6 +46,9 @@
 <script src="<?=base_url('assets/js/validacion.js')?>" type="text/javascript"></script>
 
 <script src="<?=base_url('assets/js/scripts.js')?>" type="text/javascript"></script>
+<script src="<?=base_url('assets/lib/bootstrap.switch/js/bootstrap-switch.min.js')?>" type="text/javascript"></script>
+<script src="<?=base_url('assets/js/page-form-wizard.js')?>" type="text/javascript"></script>
+<script src="<?=base_url('assets/lib/fuelux/js/wizard.js')?>" type="text/javascript"></script>
 <script src="<?=base_url('assets/js/page-ui-treeview.js')?>" type="text/javascript"></script>
 <!-- <script src="<?=base_url('assets/js/page-data-table_row.js')?>" type="text/javascript"></script> -->
 

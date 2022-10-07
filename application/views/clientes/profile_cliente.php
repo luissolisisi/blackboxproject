@@ -15,7 +15,7 @@
                             </div>
                             <div class="col-sm-7">
                                 <div class="personal">
-                                    <h1 class="name"><?php echo $customer[0]['nombre'].' '.$customer[0]['apaterno'].' '.$customer[0]['amaterno'] ?></h1>
+                                    <h1 class="name"><?php echo $customer[0]['nombre'] . ' ' . $customer[0]['apaterno'] . ' ' . $customer[0]['amaterno'] ?></h1>
                                     <p class="description"><?php echo $customer[0]['status'] ?></p>
                                     <p>
                                         <button data-modal="reply-ticket" class="btn btn-primary btn-flat btn-rad"><i class="fa fa-check"></i> Editar</button>
@@ -29,13 +29,13 @@
                                             <td style="width:45%;">Reglas KO</td>
                                             <td>
                                                 <div class="progress">
-                                                    
-                                                    <div style="width: 100%" class="progress-bar progress-bar-<?php echo ((int)$customer[0]['status_rules'] == 1) ? 'success' : 'danger'    ?>"></div>
+
+                                                    <div style="width: 100%" class="progress-bar progress-bar-<?php echo ((int) $customer[0]['status_rules'] == 1) ? 'success' : 'danger' ?>"></div>
                                                 </div>
-                                                
+
                                             </td>
                                         </tr>
-                                        
+
                                     </tbody>
                                 </table>
                             </div>
@@ -49,7 +49,8 @@
                         <ul class="nav nav-tabs">
                             <li class="active"><a data-toggle="tab" href="#infoCliente">Información</a></li>
                             <li><a data-toggle="tab" href="#matrizPerfilamiento">Matriz pérfilamiento</a></li>
-                            <li><a data-toggle="tab" href="#rulesKO">Reglas KO</a></li>
+                            <li><a data-toggle="tab" href="#productRating">Calificación por producto</a></li>
+                            <!--li><a data-toggle="tab" href="#rulesKO">Reglas KO</a></li-->
                         </ul>
                         <div class="tab-content">
                             <div id="infoCliente" class="tab-pane active cont">
@@ -60,10 +61,7 @@
                                             <td>
                                                 <table class="no-border no-strip skills">
                                                     <tbody class="no-border-x no-border-y">
-                                                        <tr>
-                                                            <td style="width:20%;"><b>Producto:</b></td>
-                                                            <td><?php echo $customer[0]['producto'] ?></td>
-                                                        </tr>
+
                                                         <tr>
                                                             <td style="width:20%;"><b>Tipo de persona:</b></td>
                                                             <td><?php echo $customer[0]['tipo_persona'] ?></td>
@@ -154,28 +152,247 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php foreach($customer[0]['rulesOk'] as $reglas): ?>
-                                                <tr>
-                                                    <td><?php echo $reglas['criterio'] ?></td>
-                                                    <td><?php echo $reglas['rule'] ?></td>
-                                                    <td><?php echo $reglas['valor'] ?></td>
-                                                    <?php if((int)$reglas['caumple'] == 1): ?>
-                                                    <td><span class="label label-success"><i class="fa fa-check"></i></span></td>
-                                                    <?php else: ?>
-                                                    <td><span class="label label-danger"><i class="fas fa-times"></i></span></td>
-                                                    <?php endif; ?>
-                                                </tr>
+                                                <?php foreach ($customer[0]['rulesOk'] as $reglas): ?>
+                                                    <tr>
+                                                        <td><?php echo $reglas['criterio'] ?></td>
+                                                        <td><?php echo $reglas['rule'] ?></td>
+                                                        <td><?php echo $reglas['valor'] ?></td>
+                                                        <?php if ((int) $reglas['caumple'] == 1): ?>
+                                                            <td><span class="label label-success"><i class="fa fa-check"></i></span></td>
+                                                        <?php else: ?>
+                                                            <td><span class="label label-danger"><i class="fas fa-times"></i></span></td>
+                                                        <?php endif; ?>
+                                                    </tr>
                                                 <?php endforeach; ?>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
+                            <div id="productRating" class="tab-pane">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3 class="widget-title">Raiting</h3>
+                                        <div id="accordion4" class="panel-group accordion accordion-semi">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading success">
+                                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion4" href="#p-1" class="collapsed"><i class="fa fa-angle-right"></i> Si cuento - pensionados<i class=" fa fa-check-circle " style="float:right "></i></a></h4>
+                                                </div>
+                                                <div id="p-1" class="panel-collapse collapse ">
+                                                    <div class="panel-body">
+                                                        <table class="no-border">
+                                                            <thead class="no-border">
+                                                                <tr>
+                                                                    <th style="width:50%;">Criterio</th>
+                                                                    <th>Valor</th>
+                                                                    <th class="text-right">Aprobación</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="no-border-x">
+                                                                <tr>
+                                                                    <td>Edad</td>
+                                                                    <td>35</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasMop99</td>
+                                                                    <td>Si</td>
+                                                                    <td class="text-right"><i class="fa fa-times"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasCV</td>
+                                                                    <td>No</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading success">
+                                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion4" href="#p-2" class="collapsed"><i class="fa fa-angle-right"></i> Si cuento a la medida<i class=" fa fa-check-circle " style="float:right "></i></a></h4>
+                                                </div>
+                                                <div id="p-2" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <table class="no-border">
+                                                            <thead class="no-border">
+                                                                <tr>
+                                                                    <th style="width:50%;">Criterio</th>
+                                                                    <th>Valor</th>
+                                                                    <th class="text-right">Aprobación</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="no-border-x">
+                                                                <tr>
+                                                                    <td>Edad</td>
+                                                                    <td>35</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasMop99</td>
+                                                                    <td>Si</td>
+                                                                    <td class="text-right"><i class="fa fa-times"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasCV</td>
+                                                                    <td>No</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading danger">
+                                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion4" href="#p-3" class="collapsed"><i class="fa fa-angle-right"></i> Si cuento - express<i class="fa fa-times-circle " style="float:right "></i></a></h4>
+                                                </div>
+                                                <div id="p-3" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <table class="no-border">
+                                                            <thead class="no-border">
+                                                                <tr>
+                                                                    <th style="width:50%;">Criterio</th>
+                                                                    <th>Valor</th>
+                                                                    <th class="text-right">Aprobación</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="no-border-x">
+                                                                <tr>
+                                                                    <td>Edad</td>
+                                                                    <td>35</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasMop99</td>
+                                                                    <td>Si</td>
+                                                                    <td class="text-right"><i class="fa fa-times"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasCV</td>
+                                                                    <td>No</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading success">
+                                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion4" href="#p-4" class="collapsed"><i class="fa fa-angle-right"></i> Si cuento - consolida plus<i class=" fa fa-check-circle " style="float:right "></i></a></h4>
+                                                </div>
+                                                <div id="p-4" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <table class="no-border">
+                                                            <thead class="no-border">
+                                                                <tr>
+                                                                    <th style="width:50%;">Criterio</th>
+                                                                    <th>Valor</th>
+                                                                    <th class="text-right">Aprobación</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="no-border-x">
+                                                                <tr>
+                                                                    <td>Edad</td>
+                                                                    <td>35</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasMop99</td>
+                                                                    <td>Si</td>
+                                                                    <td class="text-right"><i class="fa fa-times"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasCV</td>
+                                                                    <td>No</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading danger">
+                                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion4" href="#p-5" class="collapsed"><i class="fa fa-angle-right"></i> Si cuento - consolida<i class="fa fa-times-circle " style="float:right "></i></a></h4>
+                                                </div>
+                                                <div id="p-5" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <table class="no-border">
+                                                            <thead class="no-border">
+                                                                <tr>
+                                                                    <th style="width:50%;">Criterio</th>
+                                                                    <th>Valor</th>
+                                                                    <th class="text-right">Aprobación</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="no-border-x">
+                                                                <tr>
+                                                                    <td>Edad</td>
+                                                                    <td>35</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasMop99</td>
+                                                                    <td>Si</td>
+                                                                    <td class="text-right"><i class="fa fa-times"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasCV</td>
+                                                                    <td>No</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading success">
+                                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion4" href="#p-6" class="collapsed"><i class="fa fa-angle-right"></i> Si cuento - crecimiento<i class=" fa fa-check-circle " style="float:right "></i></a></h4>
+                                                </div>
+                                                <div id="p-6" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <table class="no-border">
+                                                            <thead class="no-border">
+                                                                <tr>
+                                                                    <th style="width:50%;">Criterio</th>
+                                                                    <th>Valor</th>
+                                                                    <th class="text-right">Aprobación</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="no-border-x">
+                                                                <tr>
+                                                                    <td>Edad</td>
+                                                                    <td>35</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasMop99</td>
+                                                                    <td>Si</td>
+                                                                    <td class="text-right"><i class="fa fa-times"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>hasCV</td>
+                                                                    <td>No</td>
+                                                                    <td class="text-right"><i class="fa fa-check"></i></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
         </div>
     </div>

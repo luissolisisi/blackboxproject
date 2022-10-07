@@ -1,9 +1,4 @@
-$(document).ready(function () {
 
-
-
-
-});
 
 $(document).on('click', '#btn-close-delete-customer', function () {
     $("#mod-success2").modal('hide');
@@ -1526,7 +1521,7 @@ $("#formAddExecSearchList").submit(function (event) {
 
                     alert("Se guardo el registro correctamente");
                     $("#messge-config").text(data.text);
-                    
+
                     break;
                 case 500:
                     alert('No se guardo el registro correctamente');
@@ -1540,44 +1535,43 @@ $("#formAddExecSearchList").submit(function (event) {
     });
 });
 
-function toggletr(nameclass){
+function toggletr(nameclass) {
     console.log('toogle');
     $(nameclass).slideToggle("slow");
 }
 
-$('#form-oi').on('submit', function(e){
-   var $form = $(this);
-   if ( $.fn.dataTable.isDataTable( '#datatable-oi' ) ) {
-    table = $('#datatable-oi').DataTable();
-}
-else {
-    table = $('#datatable-oi').DataTable( {
-        paging: false
-    } );
-}
-   
-   // Iterate over all checkboxes in the table
-   table.$('input[type="checkbox"]').each(function(){
-      // If checkbox doesn't exist in DOM
-      if(!$.contains(document, this)){
-         // If checkbox is checked
-         if(this.checked){
-            // Create a hidden element 
-            $form.append(
-               $('<input>')
-                  .attr('type', 'hidden')
-                  .attr('name', this.name)
-                  .val(this.value)
-            );
-         }
-      } 
-   });    
- }); 
-   
-   $(document).on('click', '.btn-edit-person', function () {
-       
-       $('#edit-person-lpb').modal('show');
-    
+$('#form-oi').on('submit', function (e) {
+    var $form = $(this);
+    if ($.fn.dataTable.isDataTable('#datatable-oi')) {
+        table = $('#datatable-oi').DataTable();
+    } else {
+        table = $('#datatable-oi').DataTable({
+            paging: false
+        });
+    }
+
+    // Iterate over all checkboxes in the table
+    table.$('input[type="checkbox"]').each(function () {
+        // If checkbox doesn't exist in DOM
+        if (!$.contains(document, this)) {
+            // If checkbox is checked
+            if (this.checked) {
+                // Create a hidden element 
+                $form.append(
+                        $('<input>')
+                        .attr('type', 'hidden')
+                        .attr('name', this.name)
+                        .val(this.value)
+                        );
+            }
+        }
+    });
+});
+
+$(document).on('click', '.btn-edit-person', function () {
+
+    $('#edit-person-lpb').modal('show');
+
     var data = new Object();
 
     data['id'] = this.id;
@@ -1620,7 +1614,7 @@ else {
                     $('#publicacion_pagina_sat_sentencia_favorable').val(data.person.publicacion_pagina_sat_sentencia_favorable);
                     $('#publicacion_dof_sentencia_favorable').val(data.person.publicacion_dof_sentencia_favorable);
                     $('#numero_oficio_personas_bloqueadas').val(data.person.numero_oficio_personas_bloqueadas);
-                    
+
                     break;
                 case 500:
                     $('#message-error').show();
@@ -1652,9 +1646,9 @@ $("#formEditPerson").submit(function (event) {
                     $('#message-ok').show();
                     $('#message-ok').fadeOut(2000);
                     $('#edit-person-lpb').modal('hide');
-                     
+
                     buildTableLPB();
-                    
+
                     break;
                 case 500:
                     $('#message-error').fadeOut(2000);
@@ -1689,30 +1683,30 @@ function buildTableLPB() {
             "data": data,
         },
         "columns": [
-		    	    { "data": "nombre" },
-		    	    { "data": "rfc" },
-		    	    { "data": "curp" },
-		        	{ "data": "nacionalidad" },
-		          	{ "data": "actividad" },
-		          	{ "data": "fecha" },
-		          	{ "data": "status" },
-		          	{ "data": "no_folio" },
-		          	{ "data": "id" },
-		       	]
+            {"data": "nombre"},
+            {"data": "rfc"},
+            {"data": "curp"},
+            {"data": "nacionalidad"},
+            {"data": "actividad"},
+            {"data": "fecha"},
+            {"data": "status"},
+            {"data": "no_folio"},
+            {"data": "id"},
+        ]
     });
 }
 
- $(document).on('click', '#suc-delete', function () {
-       
-       
-       var causa = $('#causa').val();
-       var id = $('#id_list').val();
-       
-       if(causa === ''){
-           $('#message-fail-causa').show();
-           $('#message-fail-causa').fadeOut(2000);
-       }else{
-        
+$(document).on('click', '#suc-delete', function () {
+
+
+    var causa = $('#causa').val();
+    var id = $('#id_list').val();
+
+    if (causa === '') {
+        $('#message-fail-causa').show();
+        $('#message-fail-causa').fadeOut(2000);
+    } else {
+
         var data = new Object();
 
         data['id'] = id;
@@ -1730,7 +1724,7 @@ function buildTableLPB() {
                 switch (data.status) {
                     case 200:
                         $("#list_blocked").dataTable().fnDestroy();
-                        
+
                         $('#delete-person-lpb').modal('hide');
 
                         buildTableLPB();
@@ -1747,16 +1741,16 @@ function buildTableLPB() {
 
             },
         });
-   }
+    }
 
 
 });
 
 
 $(document).on('click', '.btn-delete-person', function () {
-       
-       $('#delete-person-lpb').modal('show');
-    
+
+    $('#delete-person-lpb').modal('show');
+
     var data = new Object();
 
     data['id'] = this.id;
@@ -1773,10 +1767,10 @@ $(document).on('click', '.btn-delete-person', function () {
             switch (data.status) {
                 case 200:
 
-                    
+
                     $('#id_list').val(data.person.id);
-                    
-                    
+
+
                     break;
                 case 500:
                     $('#message-error').show();

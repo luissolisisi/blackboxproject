@@ -272,10 +272,10 @@ class Clientes extends CI_Controller {
             1 => 'nombre',
             2 => 'rfc',
             3 => 'estado',
-            4 => 'producto',
-            5 => 'estatus',
-            6 => 'reglas',
-            7 => 'id',
+            
+            4 => 'estatus',
+            5 => 'reglas',
+            6 => 'id',
             
         );
 
@@ -305,9 +305,9 @@ class Clientes extends CI_Controller {
                 $nestedData['rfc'] = $post->rfc;
                 $nestedData['estado'] = $post->estado;
                 
-                $producto = $this->clientes_model->get_table_record_row('cat_productos',array('clave' => $post->producto));
-                
-                $nestedData['producto'] = $producto['resp']->nombre;
+//                $producto = $this->clientes_model->get_table_record_row('cat_productos',array('clave' => $post->producto));
+//                
+//                $nestedData['producto'] = $producto['resp']->nombre;
                 
                 //label label-success
                 if($post->status_rules == 1){
@@ -367,6 +367,8 @@ class Clientes extends CI_Controller {
         $rulesOk = $this->get_rules_ko_express($id_customer);
         
         $respServicios = $this->clientes_model->get_table_record_row('book_servicios',array('id_expediente' => $respCustomer['resp']->id));
+        
+        
 
         $arrayCustomer = array(
             'id'    =>  $respCustomer['resp']->id,
@@ -382,7 +384,7 @@ class Clientes extends CI_Controller {
             'municipio' =>  $respCustomer['resp']->municipio,
             'estado'    =>  $respCustomer['resp']->estado,
             'fuente_ingresos'   =>  $respCustomer['resp']->fuente_ingresos,
-            'producto'  =>  $respProducto['resp']->nombre,
+            
             'status_rules'    =>  $respCustomer['resp']->status_rules,
             'status'    =>  $respStatus['resp']->nombre,
             'rulesOk'   =>  $rulesOk,
@@ -401,6 +403,30 @@ class Clientes extends CI_Controller {
         $this->load->view('clientes/profile_cliente',$data);
 
         $this->load->view('footer');
+    }
+    
+    public function customer_new(){
+        
+        $cat_personas = $this->clientes_model->get_table_all('cat_personas');
+        
+        $cat_productos = $this->clientes_model->get_table_all('cat_productos');
+        
+        $data['cat_personas'] = $cat_personas['resp'];
+        
+        $data['cat_productos'] = $cat_productos['resp'];
+        
+        $this->load->view('header');
+        menu_arriba();
+
+        $this->load->view('clientes/form_new_customer',$data);
+
+        $this->load->view('footer');
+    }
+    
+    public function insert_customer(){
+        $paramters = $this->input->post();
+        
+        var_dump($paramters);
     }
 
 }

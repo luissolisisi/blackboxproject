@@ -26,7 +26,6 @@
                                             <th>Nombre</th>					
                                             <th>RFC</th>
                                             <th>Estado</th>
-                                            <th>Porducto</th>
                                             <th>Estatus</th>
                                             <th>Estatus de reglas de KO</th>
                                             <th style="width: 80px;">Acciones</th>
@@ -63,7 +62,6 @@
                 {"data": "nombre"},
                 {"data": "rfc"},
                 {"data": "estado"},
-                {"data": "producto"},
                 {"data": "estatus"},
                 {"data": "reglas"},
                 {"data": "id"},
