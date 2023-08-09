@@ -79,10 +79,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'database-ubcubo.cwvpjfkiiqvk.us-east-2.rds.amazonaws.com',
-	'username' => 'UBCubo_admin',
-	'password' => 'FEjy1oIEInIXcC54mm9J',
-	'database' => 'propld_access',
+	'hostname' => 'database-prolistas.cwvpjfkiiqvk.us-east-2.rds.amazonaws.com',
+	'username' => 'admin_prolistas',
+	'password' => 'FEjy1oIEInIXcC54mm9Q',
+	'database' => 'blackbox',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -99,24 +99,3 @@ $db['default'] = array(
 	'save_queries' => TRUE
 );
 
-$db['prolistas_a'] = array(
-	'dsn'	=> '',
-	'hostname' => 'database-prolistas.cwvpjfkiiqvk.us-east-2.rds.amazonaws.com',
-	'username' => 'admin_prolistas',
-	'password' => 'FEjy1oIEInIXcC54mm9Q',
-	'database' => 'propld_access',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
