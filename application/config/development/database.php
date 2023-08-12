@@ -81,9 +81,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'database-prolistas.cwvpjfkiiqvk.us-east-2.rds.amazonaws.com',
-	'username' => 'admin_prolistas',
-	'password' => 'FEjy1oIEInIXcC54mm9Q',
+	'hostname' => '164.92.146.106',
+	'username' => 'root',
+	'password' => '5$eGs,.8*NhbKiN',
 	'database' => 'blackbox',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
