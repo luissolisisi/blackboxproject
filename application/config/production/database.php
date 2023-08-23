@@ -79,9 +79,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '164.92.146.106',
-	'username' => 'sicuento',
-	'password' => 'SiCuento.202$.FF',
+	'hostname' => 'db-mysql-blackbox-do-user-12889941-0.b.db.ondigitalocean.com',
+	'username' => 'doadmin',
+	'password' => 'AVNS_NRmep9F1hJ7JnILsnM6',
 	'database' => 'blackbox',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
