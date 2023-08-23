@@ -75,9 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'database-prolistas.cwvpjfkiiqvk.us-east-2.rds.amazonaws.com',
-	'username' => 'admin_prolistas',
-	'password' => 'FEjy1oIEInIXcC54mm9Q',
+	'hostname' => 'db-mysql-blackbox-do-user-12889941-0.b.db.ondigitalocean.com',
+	'port'	=>	25060,
+	'username' => 'doadmin',
+	'password' => 'AVNS_NRmep9F1hJ7JnILsnM6',
 	'database' => 'blackbox',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -92,7 +93,8 @@ $db['default'] = array(
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
-	'save_queries' => TRUE
+	'save_queries' => TRUE,
+	
 );
 
 
