@@ -81,7 +81,7 @@ $db['default'] = array(
 	'dsn'	=> 'mysql://doadmin:show-password@db-mysql-blackbox-do-user-12889941-0.b.db.ondigitalocean.com:25060/blackbox?ssl-mode=',
 	'username' => 'doadmin',
 	'password' => 'AVNS_NRmep9F1hJ7JnILsnM6',
-	'database' => 'blackbox',
+	'database' => '',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
