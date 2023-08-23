@@ -72,10 +72,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
-$db['default']['port'] = 25060;	
+
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'db-mysql-blackbox-do-user-12889941-0.b.db.ondigitalocean.com',
+	'port'	=>	25060,
 	'username' => 'doadmin',
 	'password' => 'AVNS_NRmep9F1hJ7JnILsnM6',
 	'database' => 'blackbox',
