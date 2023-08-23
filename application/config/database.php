@@ -74,9 +74,7 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'db-mysql-blackbox-do-user-12889941-0.b.db.ondigitalocean.com',
-	'port'	=>	25060,
+	'dsn'	=> 'mysql://doadmin:show-password@db-mysql-blackbox-do-user-12889941-0.b.db.ondigitalocean.com:25060/blackbox?ssl-mode=',
 	'username' => 'doadmin',
 	'password' => 'AVNS_NRmep9F1hJ7JnILsnM6',
 	'database' => 'blackbox',
