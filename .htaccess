@@ -1,14 +1,8 @@
 <IfModule mod_rewrite.c>
-  ...
   RewriteEngine On
-  RewriteBase /
+  #RewriteBase /
 
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
-  ...
-</IfModule>
-<IfModule !mod_rewrite.c>
-  ErrorDocument 404 /index.php
+  RewriteRule ^ index.php [QSA,L]
 </IfModule>
 
