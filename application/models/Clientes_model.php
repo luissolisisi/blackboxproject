@@ -177,5 +177,51 @@ class Clientes_model extends CI_Model {
         return $query->num_rows();
     }
 
+    public function insert_customer($data){
+
+        $this->db->insert('book_clientes', $data);
+
+        try {
+
+            $resp = array(
+                'status' => true,
+                'error' => '',
+                'id'    =>  $this->db->insert_id()
+            );
+        } catch (Exception $ex) {
+
+            $resp = array(
+                'status' => false,
+                'error' => $ex->getMessage()
+            );
+        }
+
+
+        return $resp;
+    }
+
+    public function insert_servicio($data){
+
+        $this->db->insert('book_servicios', $data);
+
+        try {
+
+            $resp = array(
+                'status' => true,
+                'error' => '',
+                
+            );
+        } catch (Exception $ex) {
+
+            $resp = array(
+                'status' => false,
+                'error' => $ex->getMessage()
+            );
+        }
+
+
+        return $resp;
+    }
+
 
 }

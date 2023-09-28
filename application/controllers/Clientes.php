@@ -424,9 +424,88 @@ class Clientes extends CI_Controller {
     }
     
     public function insert_customer(){
-        $paramters = $this->input->post();
+
+        $demanda = 0;
+
+        if($this->input->post('demandas') == 'on'){
+            $demanda = 1;
+        }else{
+            $demanda = 0;
+        }
+
+        $pld = 0;
+
+        if($this->input->post('pld') == 'on'){
+            $pld = 1;
+        }else{
+            $pld = 0;
+        }
+
+        $dataInsertCustomer = array(
+
+            'nombre'    =>  $this->input->post('nombre'),
+            'apaterno'  =>  $this->input->post('apaterno'),
+            'amaterno'  =>  $this->input->post('amaterno'),
+            'tipo_persona'  =>  $this->input->post('tipo_persona'),
+            'rfc'  =>  $this->input->post('rfc'),
+            'curp'  =>  $this->input->post('curp'),
+            'age'  =>  $this->input->post('age'),
+            'municipio'  =>  $this->input->post('municipio'),
+            'estado'  =>  $this->input->post('estado'),
+            'fuente_ingresos'  =>  $this->input->post('fuente_ingresos'),
+            'bcs_score'  =>  $this->input->post('bcs_score'),
+            'fico_score'  =>  $this->input->post('fico_score'),
+            'ultimas_consultas'  =>  $this->input->post('ultimas_consultas'),
+            'mop4_saldos_totales'  =>  $this->input->post('mop4_saldos_totales'),
+            'mop9_financieras'  =>  $this->input->post('mop9_financieras'),
+            'demandas'  =>  $pld,
+            'pld'  =>  $this->input->post('pld'),
+            'producto'  =>  $this->input->post('producto'),
+            'created_date'  =>  date('Y-m-d H:i:s'),
+            'status'    =>  1
+            
+        );
+
+        $id_expediente = $this->clientes_model->insert_customer($dataInsertCustomer);
+
+        $dataInsertServicio = array(
+
+            'clave_producto'  =>  $this->input->post('clave_producto'),
+            'monto_solicitado'  =>  $this->input->post('monto_solicitado'),
+            'id_expediente'  =>  $id_expediente['id'],
+            'plazos'  =>  $this->input->post('plazos'),
+            'plazo_promedio'  =>  $this->input->post('plazo_promedio'),
+            'monto_promedio'  =>  $this->input->post('monto_promedio'),
+            'credito_promedio'  =>  $this->input->post('credito_promedio'),
+            'destino_credito'  =>  $this->input->post('destino_credito'),
+            
+        );
+
+        $this->clientes_model->insert_servicio($dataInsertServicio);
+
+        if($id_expediente['status'] == true){
+            $response = $this->output
+                    ->set_content_type('application/json')
+                    ->set_status_header(200)
+                    ->set_output(json_encode(array(
+                'text' => 'Insertado correctamente',
+                'status' => 200
+            )));
+        }else{
+            $response = $this->output
+                    ->set_content_type('application/json')
+                    ->set_status_header(200)
+                    ->set_output(json_encode(array(
+                'text' => 'No se pudo registrar el cliente',
+                'status' => 500
+            )));
+        }
+
         
-        var_dump($paramters);
+
+        return $response;            
+        
+        
     }
 
 }
