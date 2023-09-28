@@ -174,7 +174,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Producto <span class="text-danger">*</span></label>
                                             <div class="col-sm-6">
-                                                <select class="form-control" id="tipo_persona" name="tipo_persona">
+                                                <select class="form-control" id="clave_producto" name="clave_producto">
                                                     <option value="">Seleccione una opción</option>
                                                     <?php foreach ($cat_productos as $cat_pro): ?>
                                                     <option value="<?php echo $cat_pro->clave ?>"><?php echo $cat_pro->nombre ?></option>
@@ -221,7 +221,7 @@
                                         <div class="form-group">
                                             <div class="col-sm-12">
                                                 <button data-wizard="#wizard1" class="btn btn-default wizard-previous"><i class="fa fa-caret-left"></i> Previous</button>
-                                                <button type="submit" class="btn btn-success wizard-next"><i class="fa fa-check"></i> Complete</button>
+                                                <button type="submit" class="btn btn-success "><i class="fa fa-check"></i> Complete</button>
                                             </div>
                                         </div>
                                     
@@ -244,27 +244,43 @@
         
         $('#monto_solicitado,#monto_promedio').number(true, 2);
         
+        $("#insertCustomer").submit(function (event) {
+        event.preventDefault();
         
+        //var str = window.location.href;
+
+        var formulario = $("#insertCustomer").serialize();
+        $.ajax({
+            type: "post",
+            url: "<?php  echo base_url('clientes/insert_customer') ?>",
+            data: formulario,
+            success: function (data)
+            {
+                
+                switch (data.status) {
+                        case 200:
+                            
+                            alert('Registro guardado correctamente');
+                            window.location.href = "<?php echo base_url('customers/get_customers_all') ?>";
+
+                        case 500:
+                            alert('No se pudo guardar el registro');
+                            location.reload();
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                
+                
+                
+            }
+        });
+    });
       });
       
-//     
-//    $("#insertCustomer").submit(function (e) {
-//        e.preventDefault();
-//        //var str = window.location.href;
-//
-//        var formulario = $("#insertCustomer").serialize();
-//        $.ajax({
-//            type: "post",
-//            url: <?php  echo base_url('clientes/insert_customer') ?>
-//            data: formulario,
-//            success: function (resp)
-//            {
-//                alert('Formulario guardado correctamente.')
-//                //window.location.href = "<?=base_url('customers/get_customers_all') ?>";
-//                //console.log(resp);
-//            }
-//        });
-//    });
+    
+    
     
 
 
