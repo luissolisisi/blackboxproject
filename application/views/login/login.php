@@ -9,7 +9,7 @@
 		<div class="block-flat">
 			<div class="header">
 				<h3 class="text-center"> 
-					<img  src="<?= base_url('assets/img/logo.jpeg')?>" width="120"  alt="logo" class="logo-img" align="center" >
+					<img  src="<?= base_url('assets/img/logo_color.png')?>"   alt="logo" class="logo-img" align="center" >
 				</h3>
 
 			</div>
