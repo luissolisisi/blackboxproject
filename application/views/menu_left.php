@@ -7,6 +7,12 @@
                     <li class=""><a href="<?= base_url('clientes/customer_new'); ?>">Agregar cliente</a></li>
                 </ul>
             </li>
+            <li><a href="#"><i class="fas fa-users"></i><span>Microcrédito</span></a>
+                <ul class="sub-menu">
+                    <li class=""><a href="<?= base_url('muffin/customers_muffin_all'); ?>">Data Muffin</a></li>
+                    <li class=""><a href="<?= base_url('clientes/customer_new'); ?>">Data Quash</a></li>
+                </ul>
+            </li>
             <li><a href="<?= base_url('clientes/get_clientes'); ?>"><i class="fas fa-users"></i><span>opcion</span></a></li>
             
             <li><a href="#"><i class="fas fa-cog"></i><span> opcion</span></a>
