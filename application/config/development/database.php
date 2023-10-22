@@ -81,10 +81,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'db-mysql-blackbox-do-user-12889941-0.b.db.ondigitalocean.com',
-	'port'	=>	25060,
-	'username' => 'doadmin',
-	'password' => 'AVNS_NRmep9F1hJ7JnILsnM6',
+	'hostname' => '127.0.0.1',
+	'port'	=>	3306,
+	'username' => 'root',
+	'password' => '',
 	'database' => 'blackbox',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
