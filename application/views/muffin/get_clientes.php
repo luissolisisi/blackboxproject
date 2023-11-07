@@ -15,7 +15,7 @@
                 <div class="col-md-12">
                     <div class="block-flat">
                         <div class="header">
-                            <h2>Concentrado de Clientes en Muffin</h2>
+                            <h2>Concentrado de Clientes en Moffin</h2>
                         </div>
                         <div class="content">
                             <div class="table-responsive">

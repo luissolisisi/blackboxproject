@@ -94,6 +94,56 @@ class Login extends CI_Controller {
 					}
 	}
 
+	public function search_customer_api_b() {
+
+        $coincidencias = array();
+        $ch = curl_init();
+
+
+
+
+        curl_setopt($ch, CURLOPT_URL, "https://gt-servicios.com/prolistas/busquedaapi/searchpersonc");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+
+        $parameters = "nombre=andres manuel&apaterno=lopez&amaterno=obrador&id_entidad=1500&tipo_busqueda=normal&rfc=&curp=&tipo_persona=FISICA";
+
+        
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $parameters);
+
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            "Content-Type: application/x-www-form-urlencoded",
+            "X-API-KEY:201020594",
+        ));
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        $json = json_decode($response);
+
+        
+
+        foreach ($json->parameters->result as $j) {
+            $array_j = array(
+                'id' => $j[0],
+                'name' => $j[1],
+                'pertenece' => $j[2],
+                'actividad' => $j[3],
+                'tipo_lista' => $j[5],
+                'status' => $j[6],
+                'porcentaje' => $j[7],  
+            );
+
+            array_push($coincidencias, $array_j);
+        }
+
+        var_dump($coincidencias);
+        
+        return $coincidencias;
+    }
+
 	public function cerrarlogin(){
 		$id=$this->session->userdata('id');
 		$this->binnacle_model->bit_cerrar($id);
