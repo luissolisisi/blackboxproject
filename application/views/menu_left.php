@@ -9,7 +9,7 @@
             </li>
             <li><a href="#"><i class="fas fa-users"></i><span>Microcrédito</span></a>
                 <ul class="sub-menu">
-                    <li class=""><a href="<?= base_url('muffin/customers_muffin_all'); ?>">Data Muffin</a></li>
+                    <li class=""><a href="<?= base_url('muffin/customers_muffin_all'); ?>">Data Moffin</a></li>
                     <li class=""><a href="<?= base_url('clientes/customer_new'); ?>">Data Quash</a></li>
                 </ul>
             </li>
